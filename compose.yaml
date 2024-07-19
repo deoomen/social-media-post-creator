@@ -1,0 +1,17 @@
+services:
+
+  app:
+    build: .
+    env_file:
+      - .env
+    container_name: social-media-post-creator-app
+    volumes:
+      - ./app:/app
+    stdin_open: true
+    tty: true
+    networks:
+      - social-media-post-creator-network
+
+networks:
+  social-media-post-creator-network:
+    driver: bridge
